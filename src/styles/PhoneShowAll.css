@@ -1,0 +1,11 @@
+figure {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+
+figcaption {
+  text-align: center;
+}

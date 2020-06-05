@@ -1,3 +1,7 @@
 .App {
+  width: 90%;
+  margin: 4em auto;
+  background-color: gray;
+  border-radius: 10px;
 }
 
