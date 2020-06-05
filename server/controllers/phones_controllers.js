@@ -11,7 +11,7 @@ class PhoneController {
   getPhones = async (req, res) => {
     try{
         // const phones = await Phones.find({});  // Phones model for demo only
-        res.status(200).json({OK: true, data: phone_list});
+        res.status(200).json(phone_list);
     }
     catch(err){
       console.log('Something went wrong!');

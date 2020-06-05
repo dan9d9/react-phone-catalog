@@ -1,12 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import rootReducer from './reducers';
+import { fetchPhones, toggleFetch } from './actions';
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools( 
+  applyMiddleware(thunk),));
+
+const unsubscribe = store.subscribe(() => {
+  console.log('store changed!', store.getState());
+});
+
+store.dispatch(toggleFetch(true));
+store.dispatch(fetchPhones())
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
