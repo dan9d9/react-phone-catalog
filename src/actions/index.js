@@ -3,29 +3,15 @@ import { URL } from '../config';
 
 // Action Types
 export const SELECT_PHONE = 'SELECT_PHONE';
-export const CHANGE_VIEW_MODE = 'CHANGE_VIEW_MODE';
 export const FETCH_DATA = 'FETCH_DATA'; // Indicates user has pressed button to start fetch
 export const REQUEST_PHONES = 'REQUEST_PHONES' // Action to send request
 export const RECEIVE_PHONES = 'RECEIVE_PHONES' // Action to receive response
-
-// Other
-export const VIEW_MODES = {
-    SHOW_ALL: 'SHOW_ALL',
-    SHOW_SELECTED: 'SHOW_SELECTED'
-};
 
 // Action Creators
 export const selectPhone = id => {
   return {
     type: SELECT_PHONE,
     id
-  }
-};
-
-export const changeViewMode = viewMode => {
-  return {
-    type: CHANGE_VIEW_MODE,
-    viewMode
   }
 };
 

@@ -1,6 +1,5 @@
 import { 
   SELECT_PHONE,
-  CHANGE_VIEW_MODE,
   FETCH_DATA,
   REQUEST_PHONES,
   RECEIVE_PHONES 
@@ -11,7 +10,6 @@ const initialState = {
   isFetching: false,
   phones: [],
   selectedPhone: null,
-  viewMode: 'SHOW_ALL'
 }
 
 const reducer = (state = initialState, action) => {
@@ -21,11 +19,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         selectedPhone: action.id
-      }
-    case CHANGE_VIEW_MODE:
-      return {
-        ...state,
-        viewMode: action.viewMode
       }
     case FETCH_DATA:
       return {
