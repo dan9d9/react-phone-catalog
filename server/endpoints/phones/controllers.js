@@ -1,9 +1,9 @@
 //
 // Phone model is not used as there is no connected database, only for demo purposes
-// const Phones = require('../models/Phone'); 
+// const Phones = require('./model'); 
 //
 
-const phone_list = require('../phones.json');
+const phone_list = require('../../phones.json');
 
 class PhoneController {
 

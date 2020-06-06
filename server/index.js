@@ -8,6 +8,6 @@ const PORT = process.env.PORT || 3030;
 app.use(cors());
 
 // Routes
-app.use('/phones', require('./routes/phones_routes.js'));
+app.use('/phones', require('./endpoints/phones/routes.js'));
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));
