@@ -6,6 +6,10 @@
   padding: 1em 0;
 }
 
+.phone-list-item figure > div {
+  text-align: center;
+}
+
 .phone-list-item figcaption {
   text-align: center;
 }

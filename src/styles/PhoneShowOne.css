@@ -1,31 +1,44 @@
 .phone-modal {
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
   min-height: 100%;
   
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: 2em;
-
-  background-color: aliceblue;
+  background-color: rgb(214, 218, 221);
   background-color: rgba(240, 248, 255, 0.733);
+
+  z-index: 1;
 }
 
 .phone-modal figure {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 50%;
+
+  padding: 2em;
+  background-color: white;
+  border-radius: 10px;
   text-align: center;
+  overflow: auto;
 }
 
 .phone-modal figure > div {
-  width: 70%;
-  height: 70%;
-  margin: 0 auto;
+  text-align: center;
 }
 
-.phone-modal figcaption {
-  height: 30%;
+.phone-modal figcaption > div:first-child {
+  text-align: justify;
+}
+
+.phone-modal figcaption > div:last-child {
+  display: flex;
+  justify-content: space-around;
 }

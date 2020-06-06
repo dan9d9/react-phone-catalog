@@ -13,13 +13,13 @@ function PhoneShowOne(props) {
         <figcaption>
           <div>
             <p>{props.phone.description}</p>
-            <p>{props.phone.price}</p>
+            <p>&euro;{props.phone.price}</p>
           </div>
           <div>
-            <p>{props.phone.color}</p>
-            <p>{props.phone.screen}</p>
-            <p>{props.phone.processor}</p>
-            <p>{props.phone.ram}</p>
+            <p>Color: {props.phone.color}</p>
+            <p>Screen: {props.phone.screen}</p>
+            <p>Processor: {props.phone.processor}</p>
+            <p>Ram: {props.phone.ram}</p>
           </div>
         </figcaption>
       </figure>
