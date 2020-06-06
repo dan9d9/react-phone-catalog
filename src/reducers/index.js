@@ -1,13 +1,13 @@
 import { 
   SELECT_PHONE,
   CHANGE_VIEW_MODE,
-  TOGGLE_FETCH,
+  FETCH_DATA,
   REQUEST_PHONES,
   RECEIVE_PHONES 
 } from '../actions';
 
 const initialState = {
-  initiateFetch: false,
+  dataToFetch: 'phones',
   isFetching: false,
   phones: [],
   selectedPhone: null,
@@ -26,10 +26,10 @@ const reducer = (state = initialState, action) => {
         ...state,
         viewMode: action.viewMode
       }
-    case TOGGLE_FETCH:
+    case FETCH_DATA:
       return {
         ...state,
-        initiateFetch: action.initiated
+        dataToFetch: action.data
     }
     case REQUEST_PHONES:
       return {
