@@ -1,5 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
+
+import { fetchData } from '../actions';
+
+
+const mapDispatchToProps = dispatch => ({
+  onClick: () => dispatch(fetchData('phones'))
+});
 
 function Button(props) {
   return (
@@ -14,5 +22,8 @@ Button.propTypes = {
   children: PropTypes.node.isRequired
 }
 
-export default Button
+export default connect(
+  null,
+  mapDispatchToProps
+)(Button);
 

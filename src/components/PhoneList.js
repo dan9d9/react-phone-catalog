@@ -7,9 +7,13 @@ const PhoneList = props => {
   return (
     <ul>
       {props.phones.map(ele => {
-        return <li key={ele.id}>
-                 <PhoneShowAll {...ele}/>
-               </li>
+        return (
+          <PhoneShowAll 
+            key={ele.id} 
+            onClick={() => props.selectPhone(ele.id)} 
+            {...ele}
+          />
+        );
       })}
     </ul>
   )

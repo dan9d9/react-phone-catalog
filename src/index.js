@@ -9,7 +9,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './reducers';
-import { fetchPhones, toggleFetch } from './actions';
+import { fetchPhones } from './actions';
 
 const store = createStore(
   rootReducer,
@@ -20,8 +20,8 @@ const unsubscribe = store.subscribe(() => {
   console.log('store changed!', store.getState());
 });
 
-store.dispatch(toggleFetch(true));
-store.dispatch(fetchPhones())
+
+// store.dispatch(fetchPhones())
 
 ReactDOM.render(
   <React.StrictMode>

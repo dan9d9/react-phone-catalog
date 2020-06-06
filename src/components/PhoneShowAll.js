@@ -4,22 +4,25 @@ import '../styles/PhoneShowAll.css';
 
 const PhoneShowAll = props => {
   return (
-    <figure>
-      <div>
-        <img src={require(`../images/${props.imageFileName}`)} alt={`${props.manufacturer} ${props.name}`}/>
-      </div>
-      <figcaption>
+    <li onClick={props.onClick}>
+      <figure>
         <div>
-          <p>{props.manufacturer}</p>
-          <p>{props.name}</p>
+          <img src={require(`../images/${props.imageFileName}`)} alt={`${props.manufacturer} ${props.name}`}/>
         </div>
-        <p>&euro;{props.price}</p>
-      </figcaption>
-    </figure>
+        <figcaption>
+          <div>
+            <p>{props.manufacturer}</p>
+            <p>{props.name}</p>
+          </div>
+          <p>&euro;{props.price}</p>
+        </figcaption>
+      </figure>
+    </li>
   );
 }
 
 PhoneShowAll.propTypes = {
+  id: PropTypes.number.isRequired,
   imageFileName: PropTypes.string.isRequired,
   manufacturer: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,

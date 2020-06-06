@@ -7,7 +7,7 @@ import {
 } from '../actions';
 
 const initialState = {
-  dataToFetch: 'phones',
+  dataToFetch: '',
   isFetching: false,
   phones: [],
   selectedPhone: null,
@@ -17,6 +17,7 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case SELECT_PHONE:
+      console.log('selected', action.id);
       return {
         ...state,
         selectedPhone: action.id
