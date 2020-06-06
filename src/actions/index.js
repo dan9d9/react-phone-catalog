@@ -4,7 +4,7 @@ import { URL } from '../config';
 // Action Types
 export const SELECT_PHONE = 'SELECT_PHONE';
 export const CHANGE_VIEW_MODE = 'CHANGE_VIEW_MODE';
-export const TOGGLE_FETCH = 'TOGGLE_FETCH'; // Indicates user has pressed button to start fetch
+export const FETCH_DATA = 'FETCH_DATA'; // Indicates user has pressed button to start fetch
 export const REQUEST_PHONES = 'REQUEST_PHONES' // Action to send request
 export const RECEIVE_PHONES = 'RECEIVE_PHONES' // Action to receive response
 
@@ -29,10 +29,10 @@ export const changeViewMode = viewMode => {
   }
 };
 
-export const toggleFetch = bool => {
+export const fetchData = data => {
   return {
-    type: TOGGLE_FETCH,
-    initiated: bool
+    type: FETCH_DATA,
+    data
   }
 };
 
@@ -47,7 +47,6 @@ export const receivePhones = json => {
   return {
     type: RECEIVE_PHONES,
     phones: json,
-    receivedAt: Date.now()
   }
 };
 
@@ -58,7 +57,6 @@ export const fetchPhones = () => {
     return axios.get(`${URL}/phones`)
       .then(json => {
         dispatch(receivePhones(json.data));
-        dispatch(toggleFetch(false));
     });
   }
 }
