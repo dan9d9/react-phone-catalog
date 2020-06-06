@@ -1,4 +1,4 @@
-figure {
+.phone-list-item figure {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -6,6 +6,6 @@ figure {
   padding: 1em 0;
 }
 
-figcaption {
+.phone-list-item figcaption {
   text-align: center;
 }

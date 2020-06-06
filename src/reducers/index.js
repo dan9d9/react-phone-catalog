@@ -15,7 +15,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case SELECT_PHONE:
-      console.log('selected', action.id);
       return {
         ...state,
         selectedPhone: action.id

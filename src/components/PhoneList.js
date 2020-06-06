@@ -5,7 +5,7 @@ import '../styles/PhoneList.css';
 
 const PhoneList = props => {
   return (
-    <ul>
+    <ul className='phone-list'>
       {props.phones.map(ele => {
         return (
           <PhoneShowAll 

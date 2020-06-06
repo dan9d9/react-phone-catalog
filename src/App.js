@@ -29,19 +29,27 @@ class App extends Component {
     if (prevProps.dataToFetch !== this.props.dataToFetch) {
       dispatch(fetchPhones());
     }
+
+    if(prevProps.selectedPhone !== this.props.selectedPhone) {
+      this.props.selectedPhone !== null
+        ? document.body.style.overflow = "hidden"
+        : document.body.style.overflow = "visible";
+    }
   }
 
   render() {
+    const { phones, selectedPhone, isFetching } = this.props;
+
     return (
       <div className="App">
-        {this.props.phones.length === 0 && 
+        {phones.length === 0 && 
           <Button>Fetch Phones!</Button>
         }
-        {this.props.phones.length !== 0 && 
+        {phones.length !== 0 && 
           <DisplayPhoneList />
         }
-        {this.props.selectedPhone !== null &&
-          <ShowSelectedPhone id={this.props.selectedPhone}/>
+        {selectedPhone !== null &&
+          <ShowSelectedPhone id={selectedPhone}/>
         }
       </div>
     );
