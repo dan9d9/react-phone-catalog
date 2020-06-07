@@ -6,6 +6,8 @@ export const SELECT_PHONE = 'SELECT_PHONE';
 export const FETCH_DATA = 'FETCH_DATA'; // Indicates user has pressed button to start fetch
 export const REQUEST_PHONES = 'REQUEST_PHONES' // Action to send request
 export const RECEIVE_PHONES = 'RECEIVE_PHONES' // Action to receive response
+export const RECEIVE_ERROR = 'RECEIVE_ERROR';
+export const CLEAR_ERROR = 'CLEAR_ERROR';
 
 // Action Creators
 export const selectPhone = id => {
@@ -29,12 +31,25 @@ export const requestPhones = () => {
   }
 }
 
-export const receivePhones = json => {
+export const receivePhones = jsonData => {
   return {
     type: RECEIVE_PHONES,
-    phones: json,
+    phones: jsonData,
   }
 };
+
+export const receiveError = bool => {
+  return {
+    type: RECEIVE_ERROR,
+    error: bool
+  }
+}
+
+export const clearError = () => {
+  return {
+    type: CLEAR_ERROR,
+  }
+}
 
 export const fetchPhones = () => {
   return function (dispatch) {
@@ -42,7 +57,9 @@ export const fetchPhones = () => {
 
     return axios.get(`${URL}/phones`)
       .then(json => {
-        dispatch(receivePhones(json.data));
+        Array.isArray(json.data)
+          ? dispatch(receivePhones(json.data))
+          : dispatch(receiveError(true));     
     });
   }
 }

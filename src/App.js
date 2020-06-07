@@ -8,12 +8,14 @@ import FetchButton from './containers/FetchButton';
 import ShowPhoneModal from './containers/ShowPhoneModal';
 import DisplayPhoneList from './containers/DisplayPhoneList';
 import Spinner from './components/Spinner';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const mapStateToProps = state => ({
   dataToFetch: state.dataToFetch,
   isFetching: state.isFetching,
   phones: state.phones,
   selectedPhone: state.selectedPhone,
+  error: state.error
 });
 
 class App extends Component {
@@ -22,12 +24,13 @@ class App extends Component {
     isFetching: PropTypes.bool.isRequired,
     phones: PropTypes.array.isRequired,
     selectedPhone: PropTypes.number,
+    error: PropTypes.bool
   }
 
   componentDidUpdate(prevProps) {
     const { dispatch } = this.props;
 
-    if (prevProps.dataToFetch !== this.props.dataToFetch) {
+    if (prevProps.dataToFetch !== this.props.dataToFetch && !this.props.error) {
       dispatch(fetchPhones());
     }
 
@@ -39,21 +42,26 @@ class App extends Component {
   }
 
   render() {
-    const { phones, selectedPhone, isFetching } = this.props;
+    const { phones, selectedPhone, isFetching, error } = this.props;
 
     return (
       <div className="App">
         {isFetching &&
           <Spinner />
         }
-        {phones.length === 0 && 
+        {phones.length === 0 && !error &&
           <FetchButton>Fetch Phones</FetchButton>
         }
-        {phones.length !== 0 && 
-          <DisplayPhoneList />
-        }
+        <ErrorBoundary>
+          {phones.length !== 0 && 
+            <DisplayPhoneList />
+          }
+        </ErrorBoundary>
         {selectedPhone !== null &&
           <ShowPhoneModal />
+        }
+        {error &&
+          <FetchButton error={true}>An error ocurred during your request. Click to try again.</FetchButton>
         }
       </div>
     );

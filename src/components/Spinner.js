@@ -1,7 +1,7 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
-import '../styles/Button.css';
+import '../styles/Spinner.css';
 
 
 class Spinner extends React.Component {

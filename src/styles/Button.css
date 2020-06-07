@@ -47,9 +47,10 @@
   color: var(--btn-hover-color);
 }
 
+
+/* Lock in hover style and hide text while fetching */
 .fetching {
   border-color: var(--btn-hover-color);
-  color: var(--btn-hover-color);
   box-shadow: 0px 0px 3px 3px var(--btn-hover-color);
 }
 
@@ -57,11 +58,14 @@
   color: rgb(240, 248, 255);
 }
 
-.spinner {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 
-  z-index: 1;
+/* Error button */
+.error {
+  border-color: rgb(247, 53, 19);
+  box-shadow: 0px 0px 3px 3px rgb(247, 53, 19);
+}
+
+.error span {
+  font-size: 0.95rem;
+  color: rgb(247, 53, 19);
 }

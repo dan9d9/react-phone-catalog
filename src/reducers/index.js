@@ -2,7 +2,9 @@ import {
   SELECT_PHONE,
   FETCH_DATA,
   REQUEST_PHONES,
-  RECEIVE_PHONES 
+  RECEIVE_PHONES,
+  RECEIVE_ERROR,
+  CLEAR_ERROR
 } from '../actions';
 
 const initialState = {
@@ -10,6 +12,7 @@ const initialState = {
   isFetching: false,
   phones: [],
   selectedPhone: null,
+  error: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -34,6 +37,18 @@ const reducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         phones: action.phones
+      }
+    case RECEIVE_ERROR:
+      return {
+        ...state,
+        dataToFetch: '',
+        isFetching: false,
+        error: action.error
+      }
+    case CLEAR_ERROR:
+      return {
+        ...state,
+        error: false
       }
     default:
       return state;

@@ -3,34 +3,32 @@
 // const Phones = require('./model'); 
 //
 
-const phone_list = require('../../phones.json');
+const phones = require('../../phones.json');
 
 
 class PhoneController {
 
   // Get All Phones //
-  getPhones = async (req, res) => {
-    // Choose random number between 1 and 5 for setTimeout 
+  getPhones = async (req, res, next) => {
+    // Create simulated wait time from 1-5 seconds
     const waitTime = Math.floor(Math.random() * 5 + 1) * 1000;
-
+    // const waitTime = 5000;
     try{
       // const phones = await Phones.find({});  // Demo of fetching phones from DB
 
-
-      // Simulate response time 
+      // Simulate response wait time 
       await new Promise(resolve => setTimeout(resolve, waitTime));
 
-      // Simulate error on unsuccesful request
-      // if(waitTime === 5000) {
-      //   throw new Error('Something went wrong!');
-      // }
+      // Simulate error on unsuccesful request if wait time === 5s
+      if(waitTime === 5000) {
+        throw new Error('Something went wrong with your request!');
+      }
 
-
-      res.status(200).json(phone_list);
+      res.status(200).send(phones);
     }
     catch(err){
-      console.log(err);
-      res.json({OK: false, message: err});
+      next(err);
+      res.json({error: true, message: err.message});
     }
   }
 
