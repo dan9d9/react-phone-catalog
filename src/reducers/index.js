@@ -43,7 +43,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         dataToFetch: '',
         isFetching: false,
-        error: action.error
+        error: true
       }
     case CLEAR_ERROR:
       return {

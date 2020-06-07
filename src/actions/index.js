@@ -38,10 +38,9 @@ export const receivePhones = jsonData => {
   }
 };
 
-export const receiveError = bool => {
+export const receiveError = () => {
   return {
     type: RECEIVE_ERROR,
-    error: bool
   }
 }
 
@@ -57,9 +56,9 @@ export const fetchPhones = () => {
 
     return axios.get(`${URL}/phones`)
       .then(json => {
-        Array.isArray(json.data)
+        Array.isArray(json.data) && json.data.length > 0
           ? dispatch(receivePhones(json.data))
-          : dispatch(receiveError(true));     
+          : dispatch(receiveError());     
     });
   }
 }

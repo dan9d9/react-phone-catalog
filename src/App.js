@@ -61,7 +61,7 @@ class App extends Component {
           <ShowPhoneModal />
         }
         {error &&
-          <FetchButton error={true}>An error ocurred during your request. Click to try again.</FetchButton>
+          <FetchButton error={true}>Your request was interrupted. Click to try again.</FetchButton>
         }
       </div>
     );

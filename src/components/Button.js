@@ -5,7 +5,6 @@ import '../styles/Button.css';
 
 
 const Button = props => {
-  console.log(props);
   return (
     <button className={props.classNames} onClick={props.onClick}>
       <span>{props.children}</span>

@@ -21,14 +21,14 @@ class PhoneController {
 
       // Simulate error on unsuccesful request if wait time === 5s
       if(waitTime === 5000) {
-        throw new Error('Something went wrong with your request!');
+        throw new Error('An error occured during your request.');
       }
 
       res.status(200).send(phones);
     }
     catch(err){
       next(err);
-      res.json({error: true, message: err.message});
+      res.json([]);
     }
   }
 
