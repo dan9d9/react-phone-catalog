@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
 
 import { fetchData } from '../actions';
+import '../styles/Button.css';
 
 
 const mapDispatchToProps = dispatch => ({
@@ -11,8 +12,8 @@ const mapDispatchToProps = dispatch => ({
 
 function Button(props) {
   return (
-    <button onClick={props.onClick}>
-      {props.children}
+    <button className='fetch-button' onClick={props.onClick}>
+      <span>{props.children}</span>
     </button>
   )
 }
