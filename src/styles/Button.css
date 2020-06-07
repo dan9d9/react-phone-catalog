@@ -21,6 +21,10 @@
   background-color: rgb(240, 248, 255);
 }
 
+/* Remove focus outline */
+:focus {outline:none;}          /* Chrome */
+::-moz-focus-inner {border:0;}  /* Firefox */
+
 .fetch-button:hover, .fetch-button:focus {
   border-color: var(--btn-hover-color);
   box-shadow: 0px 0px 3px 3px var(--btn-hover-color);
@@ -47,6 +51,10 @@
   border-color: var(--btn-hover-color);
   color: var(--btn-hover-color);
   box-shadow: 0px 0px 3px 3px var(--btn-hover-color);
+}
+
+.fetch-button.fetching span {
+  color: rgb(240, 248, 255);
 }
 
 .spinner {
