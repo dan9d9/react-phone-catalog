@@ -1,6 +1,7 @@
 import React from 'react';
 import Loader from 'react-loader-spinner';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import '../styles/Button.css';
 
 
 class Spinner extends React.Component {
@@ -8,10 +9,13 @@ class Spinner extends React.Component {
    render() {
     return(
      <Loader
+        className="spinner"
         type="Rings"
-        color="#00BFFF"
-        height={100}
-        width={100}
+        // Color, height and width coordinated with fetch button styles
+        // Position styling located in Button.css
+        color="#88c2ae"
+        height={150}
+        width={150}
      />
     );
    }

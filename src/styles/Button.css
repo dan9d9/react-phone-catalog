@@ -1,19 +1,20 @@
 .fetch-button {
-  --hover-color: rgb(136, 194, 174);
-  --transition-time: 0.2s;
+  --btn-hover-color: #88c2ae;
+  --btn-transition-time: 0.2s;
+  --btn-size: 150px;
 
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  width: 150px;
-  height: 150px;
+  width: var(--btn-size);
+  height: var(--btn-size);
 
   border: solid 1px rgb(197, 197, 197);
   border-radius: 50%;
   box-shadow: 0px 0px 3px 3px rgb(197, 197, 197);
-  transition: all var(--transition-time);
+  transition: all var(--btn-transition-time);
 
   cursor: pointer;
 
@@ -21,8 +22,8 @@
 }
 
 .fetch-button:hover, .fetch-button:focus {
-  border-color: var(--hover-color);
-  box-shadow: 0px 0px 3px 3px var(--hover-color);
+  border-color: var(--btn-hover-color);
+  box-shadow: 0px 0px 3px 3px var(--btn-hover-color);
 }
 
 .fetch-button:active {
@@ -35,15 +36,24 @@
   text-transform: uppercase;
 
   color: rgb(41, 41, 41);
-  transition: color var(--transition-time);
+  transition: color var(--btn-transition-time);
 }
 
 .fetch-button:hover span, .fetch-button:focus span {
-  color: var(--hover-color);
+  color: var(--btn-hover-color);
 }
 
 .fetching {
-  border-color: var(--hover-color);
-  color: var(--hover-color);
-  box-shadow: 0px 0px 3px 3px var(--hover-color);
+  border-color: var(--btn-hover-color);
+  color: var(--btn-hover-color);
+  box-shadow: 0px 0px 3px 3px var(--btn-hover-color);
+}
+
+.spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
 }

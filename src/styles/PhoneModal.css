@@ -14,6 +14,7 @@
   background-color: rgba(240, 248, 255, 0.733);
 
   z-index: 1;
+  overflow: auto;
 }
 
 .phone-modal figure {
@@ -21,17 +22,26 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+
+  max-height: 100%;
+  width: 70%;
 
   padding: 2em;
   background-color: white;
   border-radius: 10px;
   text-align: center;
+
   overflow: auto;
 }
 
 .phone-modal figure > div {
   text-align: center;
+}
+
+.phone-modal img {
+  width: 20vw;
+  max-width: 250px;
+  min-width: 150px;
 }
 
 .phone-modal figcaption > div:first-child {
