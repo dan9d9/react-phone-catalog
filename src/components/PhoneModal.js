@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/PhoneShowOne.css';
+import '../styles/PhoneModal.css';
 
-function PhoneShowOne(props) {
+const PhoneModal = props => {
   return (
     <div className="phone-modal" onClick={props.deselectPhone}>
       <figure>
@@ -27,7 +27,7 @@ function PhoneShowOne(props) {
   )
 }
 
-PhoneShowOne.propTypes = {
+PhoneModal.propTypes = {
   phone: PropTypes.shape({
     imageFileName: PropTypes.string.isRequired,
     manufacturer: PropTypes.string.isRequired,
@@ -41,5 +41,5 @@ PhoneShowOne.propTypes = {
   }).isRequired,
 }
 
-export default PhoneShowOne
+export default PhoneModal;
 

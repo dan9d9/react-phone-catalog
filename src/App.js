@@ -5,8 +5,9 @@ import PropTypes from 'prop-types'
 import './styles/App.css';
 import { fetchPhones } from './actions';
 import Button from './components/Button';
-import ShowSelectedPhone from './containers/ShowSelectedPhone';
+import ShowPhoneModal from './containers/ShowPhoneModal';
 import DisplayPhoneList from './containers/DisplayPhoneList';
+import Spinner from './components/Spinner';
 
 const mapStateToProps = state => ({
   dataToFetch: state.dataToFetch,
@@ -42,14 +43,15 @@ class App extends Component {
 
     return (
       <div className="App">
+        <Spinner />
         {phones.length === 0 && 
-          <Button>Fetch Phones!</Button>
+          <Button>Fetch Phones</Button>
         }
         {phones.length !== 0 && 
           <DisplayPhoneList />
         }
         {selectedPhone !== null &&
-          <ShowSelectedPhone id={selectedPhone}/>
+          <ShowPhoneModal />
         }
       </div>
     );

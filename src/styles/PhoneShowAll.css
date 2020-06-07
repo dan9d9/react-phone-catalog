@@ -1,3 +1,8 @@
+.phone-list-item {
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
 .phone-list-item figure {
   height: 100%;
   display: flex;
@@ -8,6 +13,11 @@
 
 .phone-list-item figure > div {
   text-align: center;
+}
+
+.phone-list-item img {
+    width: 100%;
+    max-width: 250px;
 }
 
 .phone-list-item figcaption {

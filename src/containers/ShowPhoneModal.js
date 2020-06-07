@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import PhoneShowOne from '../components/PhoneShowOne';
+import PhoneModal from '../components/PhoneModal';
 import { selectPhone } from '../actions';
 
 const getSelectedPhone = (phones, id) => {
   return phones.find(phone => phone.id === id); 
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  phone: getSelectedPhone(state.phones, ownProps.id)
+const mapStateToProps = state => ({
+  phone: getSelectedPhone(state.phones, state.selectedPhone)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PhoneShowOne);
+)(PhoneModal);
