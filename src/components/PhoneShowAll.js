@@ -4,7 +4,7 @@ import '../styles/PhoneShowAll.css';
 
 const PhoneShowAll = props => {
   return (
-    <li className="phone-list-item" onClick={props.onClick} tabIndex='0'>
+    <li className="phone-list-item" onClick={props.onClick} onKeyDown={props.onKeyDown} tabIndex='0'>
       <figure>
         <div>
           <img src={require(`../images/${props.imageFileName}`)} alt={`${props.manufacturer} ${props.name}`}/>

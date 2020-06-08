@@ -9,6 +9,10 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   selectPhone: id => dispatch(selectPhone(id)),
+  onEnter: (e, id) => {
+    if(e.keyCode !== 13) return;
+    dispatch(selectPhone(id));
+  }
 })
 
 

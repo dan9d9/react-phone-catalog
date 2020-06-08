@@ -11,8 +11,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  deselectPhone: () => dispatch(selectPhone(null))
-})
+  deselectPhone: (e) => {
+    if(e.type === 'keydown' && e.keyCode !== 13) return;
+    dispatch(selectPhone(null))
+  }   
+});
 
 
 export default connect(

@@ -11,7 +11,7 @@ const PhoneList = props => {
           <PhoneShowAll
             key={ele.id} 
             onClick={() => props.selectPhone(ele.id)} 
-            // onKeyDown={() => props.selectPhone(ele.id)}
+            onKeyDown={(e) => props.onEnter(e, ele.id)}
             {...ele}
           />
         );

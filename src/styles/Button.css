@@ -27,13 +27,14 @@
   background-color: var(--btn-bg-color);
 }
 
-/* Remove focus outline */
-:focus {outline:none;}          /* Chrome */
-::-moz-focus-inner {border:0;}  /* Firefox */
-
 .fetch-button:hover, .fetch-button:focus {
   border-color: var(--btn-hover-color);
   box-shadow: 0px 0px 3px 3px var(--btn-hover-color);
+  outline: none; /* Remove Chrome focus outline */
+}
+
+.fetch-button::-moz-focus-inner { /* Remove Firefox focus border */
+  border: 0;
 }
 
 .fetch-button:active {
