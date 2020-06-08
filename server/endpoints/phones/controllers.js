@@ -13,6 +13,7 @@ class PhoneController {
 
     // Create simulated wait time from 1-5 seconds
     const waitTime = Math.floor(Math.random() * 5 + 1) * 1000;
+    // const waitTime = 5000;  // For testing error
 
     try{
       // const phones = await Phones.find({});  // Demo of fetching phones from DB

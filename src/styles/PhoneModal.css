@@ -29,7 +29,7 @@
   max-width: 800px;
   padding: 2em;
 
-  background-color: white;
+  background-color: white; /* To match the image background color */
 
   border: solid 2px black;
   border-radius: 10px;
@@ -42,10 +42,7 @@
 }
 
 .phone-modal img {
-  display: block;
-  margin: 0 auto;
   width: 20vw;
-  max-width: 250px;
   min-width: 150px;
 }
 

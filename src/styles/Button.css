@@ -1,7 +1,13 @@
 .fetch-button {
-  --btn-hover-color: #88c2ae;
-  --btn-transition-time: 0.2s;
+  /* Match btn-size and btn-hover-color with Spinner height/width/color */
   --btn-size: 150px;
+  --btn-hover-color: #88c2ae;
+
+  --btn-transition-time: 0.2s;
+  --btn-bg-color: rgb(240, 248, 255);
+  --btn-border-color: rgb(197, 197, 197);
+
+  --btn-error-color: rgb(247, 53, 19);
 
   position: absolute;
   left: 50%;
@@ -11,14 +17,14 @@
   width: var(--btn-size);
   height: var(--btn-size);
 
-  border: solid 1px rgb(197, 197, 197);
+  border: solid 1px var(--btn-border-color);
   border-radius: 50%;
-  box-shadow: 0px 0px 3px 3px rgb(197, 197, 197);
+  box-shadow: 0px 0px 3px 3px var(--btn-border-color);
   transition: all var(--btn-transition-time);
 
   cursor: pointer;
 
-  background-color: rgb(240, 248, 255);
+  background-color: var(--btn-bg-color);
 }
 
 /* Remove focus outline */
@@ -56,17 +62,17 @@
 }
 
 .fetch-button.fetching span {
-  color: rgb(240, 248, 255);
+  color: var(--btn-bg-color);
 }
 
 
 /* Error button */
 .error {
-  border-color: rgb(247, 53, 19);
-  box-shadow: 0px 0px 3px 3px rgb(247, 53, 19);
+  border-color: var(--btn-error-color);
+  box-shadow: 0px 0px 3px 3px var(--btn-error-color);
 }
 
 .error span {
   font-size: 0.95rem;
-  color: rgb(247, 53, 19);
+  color: var(--btn-error-color);
 }

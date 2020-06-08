@@ -11,8 +11,7 @@ class Spinner extends React.Component {
      <Loader
         className="spinner"
         type="Rings"
-        // Color, height and width coordinated with fetch button styles
-        // Position styling located in Button.css
+        // Color, height and width match with fetch button styles
         color="#88c2ae"
         height={150}
         width={150}
