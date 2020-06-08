@@ -27,27 +27,29 @@ class PhoneModal extends React.Component {
   }
 
   render() {
+    const { phone, deselectPhone } = this.props;
+
     return (
       <div className="phone-modal" 
-        onClick={this.props.deselectPhone} 
-        onKeyDown={(e) => this.props.deselectPhone(e)}
+        onClick={deselectPhone} 
+        onKeyDown={(e) => deselectPhone(e)}
         tabIndex='0' ref={this.modal}
       >
         <figure>
-          <h1>{`${this.props.phone.manufacturer} ${this.props.phone.name}`}</h1>
+          <h1>{`${phone.manufacturer} ${phone.name}`}</h1>
           <div>
-            <img src={require(`../images/${this.props.phone.imageFileName}`)} alt={`${this.props.phone.manufacturer} ${this.props.phone.name}`}/>
+            <img src={require(`../images/${phone.imageFileName}`)} alt={`${phone.manufacturer} ${phone.name}`}/>
           </div>
           <figcaption>
             <div>
-              <p className='phone-modal_price'>&euro;{this.props.phone.price}</p>
-              <p className='phone-modal_description'>{this.props.phone.description}</p>
+              <p className='phone-modal_price'>&euro;{phone.price}</p>
+              <p className='phone-modal_description'>{phone.description}</p>
             </div>
             <ul>
-              <li><p>Color: {this.props.phone.color}</p></li>
-              <li><p>Screen: {this.props.phone.screen}</p></li>
-              <li><p>Processor: {this.props.phone.processor}</p></li>
-              <li><p>Ram: {this.props.phone.ram}</p></li>
+              <li><p>Color: {phone.color}</p></li>
+              <li><p>Screen: {phone.screen}</p></li>
+              <li><p>Processor: {phone.processor}</p></li>
+              <li><p>Ram: {phone.ram}</p></li>
             </ul>
           </figcaption>
         </figure>
