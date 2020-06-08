@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  selectPhone: id => dispatch(selectPhone(id))
+  selectPhone: id => dispatch(selectPhone(id)),
 })
 
 

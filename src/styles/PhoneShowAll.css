@@ -1,6 +1,14 @@
 .phone-list-item {
-  background-color: white;
+  background-color: #dadee2;
   border-radius: var(--border-radius);
+  padding: 0.5em;
+  transition: all 0.2s;
+  max-width: 350px;
+}
+
+.phone-list-item:hover, .phone-list-item:focus {
+  transform: scale(1.01);
+  background-color: #bfcedd;
 }
 
 .phone-list-item figure {
@@ -9,17 +17,25 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1em 0;
-}
-
-.phone-list-item figure > div {
-  text-align: center;
+  background-color: white;
+  border-radius: var(--border-radius);
 }
 
 .phone-list-item img {
+    display: block;
+    margin: 0 auto;
     width: 100%;
     max-width: 250px;
 }
 
 .phone-list-item figcaption {
   text-align: center;
+}
+
+.phone-list-item figcaption p:not(:last-child) {
+  margin-bottom: 0.2em;
+}
+
+.phone-list-item figcaption p:first-child {
+  font-size: 1.3rem;
 }

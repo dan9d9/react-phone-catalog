@@ -35,9 +35,10 @@
 }
 
 .fetch-button span {
-  font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
   text-transform: uppercase;
+
+  padding: 0.2em;
 
   color: rgb(41, 41, 41);
   transition: color var(--btn-transition-time);

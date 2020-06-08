@@ -1,4 +1,6 @@
 .phone-modal {
+  --bottom-margin: 0.5em;
+
   position: fixed;
   top:50%;
   left:50%;
@@ -10,7 +12,6 @@
   justify-content: center;
   align-items: center;
 
-  background-color: rgb(214, 218, 221);
   background-color: rgba(240, 248, 255, 0.733);
 
   z-index: 1;
@@ -23,33 +24,80 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  max-height: 100%;
+  max-height: 95%;
   width: 70%;
-
+  max-width: 800px;
   padding: 2em;
+
   background-color: white;
+
   border: solid 2px black;
   border-radius: 10px;
-  text-align: center;
 
   overflow: auto;
 }
 
-.phone-modal figure > div {
+.phone-modal h1 {
   text-align: center;
 }
 
 .phone-modal img {
+  display: block;
+  margin: 0 auto;
   width: 20vw;
   max-width: 250px;
   min-width: 150px;
 }
 
-.phone-modal figcaption > div:first-child {
+.phone-modal_description {
   text-align: justify;
+  margin-bottom: var(--bottom-margin);
 }
 
-.phone-modal figcaption > div:last-child {
+.phone-modal_price {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: var(--bottom-margin);
+}
+
+.phone-modal ul {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
+
+  padding-left: 1em;
+  margin-bottom: var(--bottom-margin);
+
+  list-style-type: disc;
+}
+
+.phone-modal li{
+  margin-right: 2em;
+}
+
+@media screen and (max-width: 600px) {
+  .phone-modal ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .phone-modal li{
+    margin-right: 0em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .phone-modal_description {
+    text-align: center;
+  }
+
+  .phone-modal li p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .phone-modal figure {
+    width: 90%;
+  }
 }

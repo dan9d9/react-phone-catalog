@@ -6,11 +6,12 @@ import '../styles/PhoneList.css';
 const PhoneList = props => {
   return (
     <ul className='phone-list'>
-      {props.phones.map(ele => {
+      {props.phones.map((ele, idx) => {
         return (
-          <PhoneShowAll 
+          <PhoneShowAll
             key={ele.id} 
             onClick={() => props.selectPhone(ele.id)} 
+            // onKeyDown={() => props.selectPhone(ele.id)}
             {...ele}
           />
         );

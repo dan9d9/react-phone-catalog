@@ -12,15 +12,15 @@ const PhoneModal = props => {
         </div>
         <figcaption>
           <div>
-            <p>{props.phone.description}</p>
-            <p>&euro;{props.phone.price}</p>
+            <p className='phone-modal_price'>&euro;{props.phone.price}</p>
+            <p className='phone-modal_description'>{props.phone.description}</p>
           </div>
-          <div>
-            <p>Color: {props.phone.color}</p>
-            <p>Screen: {props.phone.screen}</p>
-            <p>Processor: {props.phone.processor}</p>
-            <p>Ram: {props.phone.ram}</p>
-          </div>
+          <ul>
+            <li><p>Color: {props.phone.color}</p></li>
+            <li><p>Screen: {props.phone.screen}</p></li>
+            <li><p>Processor: {props.phone.processor}</p></li>
+            <li><p>Ram: {props.phone.ram}</p></li>
+          </ul>
         </figcaption>
       </figure>
     </div>

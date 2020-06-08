@@ -10,9 +10,10 @@ class PhoneController {
 
   // Get All Phones //
   getPhones = async (req, res, next) => {
+
     // Create simulated wait time from 1-5 seconds
     const waitTime = Math.floor(Math.random() * 5 + 1) * 1000;
-    // const waitTime = 5000;
+
     try{
       // const phones = await Phones.find({});  // Demo of fetching phones from DB
 
