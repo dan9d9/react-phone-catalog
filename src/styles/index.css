@@ -46,3 +46,9 @@ img {
     font-size: 130%;
   }
 }
+
+@media screen and (min-width: 2000px) {
+  html {
+    font-size: 150%;
+  }
+}

@@ -3,3 +3,8 @@
   margin: 4em auto;
 }
 
+@media screen and (min-width: 1200px) {
+  .App {
+    width: 70%;
+  }
+}
