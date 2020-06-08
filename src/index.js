@@ -16,12 +16,6 @@ const store = createStore(
   composeWithDevTools( 
   applyMiddleware(thunk),));
 
-const unsubscribe = store.subscribe(() => {
-  console.log('store changed!', store.getState());
-});
-
-
-// store.dispatch(fetchPhones())
 
 ReactDOM.render(
   <React.StrictMode>
