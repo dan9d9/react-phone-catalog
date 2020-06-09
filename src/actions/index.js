@@ -1,15 +1,21 @@
 import axios from 'axios';
 import { URL } from '../config';
 
-// Action Types
+//////////////////
+// Action Types //
+//////////////////
 export const SELECT_PHONE = 'SELECT_PHONE';
-export const FETCH_DATA = 'FETCH_DATA'; // Indicates user has pressed button to start fetch
-export const REQUEST_PHONES = 'REQUEST_PHONES' // Action to send request
-export const RECEIVE_PHONES = 'RECEIVE_PHONES' // Action to receive response
+// Indicates user has pressed a button to start fetching some data
+export const FETCH_DATA = 'FETCH_DATA';
+// Action to indicate fetching has started
+export const REQUEST_PHONES = 'REQUEST_PHONES';
+export const RECEIVE_PHONES = 'RECEIVE_PHONES';
 export const RECEIVE_ERROR = 'RECEIVE_ERROR';
 export const CLEAR_ERROR = 'CLEAR_ERROR';
 
-// Action Creators
+/////////////////////
+// Action Creators //
+/////////////////////
 export const selectPhone = id => {
   return {
     type: SELECT_PHONE,

@@ -13,7 +13,7 @@ class PhoneController {
 
     // Create simulated wait time from 1-5 seconds
     const waitTime = Math.floor(Math.random() * 5 + 1) * 1000;
-    // const waitTime = 5000;  // For testing error
+    // const waitTime = 6000;  // For testing error
 
     try{
       // const phones = await Phones.find({});  // Demo of fetching phones from DB
@@ -22,7 +22,7 @@ class PhoneController {
       await new Promise(resolve => setTimeout(resolve, waitTime));
 
       // Simulate error on unsuccesful request if wait time === 5s
-      if(waitTime === 5000) {
+      if(waitTime >= 5000) {
         throw new Error('An error occured during your request.');
       }
 

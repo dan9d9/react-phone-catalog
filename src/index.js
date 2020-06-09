@@ -9,7 +9,6 @@ import './styles/index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import rootReducer from './reducers';
-import { fetchPhones } from './actions';
 
 const store = createStore(
   rootReducer,
