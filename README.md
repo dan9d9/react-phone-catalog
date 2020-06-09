@@ -15,4 +15,4 @@
 When the fetch button is pressed the API will simulate a response time from 1 to 5 seconds before returning the phones.json file.
 If the wait time reaches 5 seconds the API will simulate an error.
 Clear the error by pressing the fetch button again.
-Press the button again to make the request again.
+Press the button again to retry the request.
